@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res) => res.send('Hello from Vercel!'));
+app.get('/', (req, res) => res.send('Hello from Vercel-CI-CD!'));
 
 module.exports = app;
