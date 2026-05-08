@@ -24,7 +24,7 @@ export const auth = betterAuth({
     cookieCache: {
       enabled: true,
       maxAge: 7 * 24 * 60 * 60, // 7 days
-      strategy: "jwe", // or "jwt"
+      strategy: 'jwe', // or "jwt"
     },
   },
   user: {
@@ -103,6 +103,14 @@ export const auth = betterAuth({
         console.error(error);
         throw error;
       }
+    },
+  },
+  socialProviders: {
+    google: {
+      accessType: 'offline',
+      prompt: 'select_account consent',
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     },
   },
 });
